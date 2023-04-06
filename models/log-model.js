@@ -14,15 +14,15 @@ module.exports = function (sequelize, DataTypes) {
         allowNull: false,
       },
       author: {
-        type: DataTypes.TEXT,
+        type: DataTypes.STRING,
         allowNull: true,
       },
       text: {
-        type: DataTypes.TEXT,
+        type: DataTypes.STRING,
         allowNull: false,
       },
       create_date: {
-        type: DataTypes.TEXT,
+        type: DataTypes.STRING,
         allowNull: true,
       },
       message_id: {
@@ -30,7 +30,7 @@ module.exports = function (sequelize, DataTypes) {
         allowNull: false,
       },
       username: {
-        type: DataTypes.TEXT,
+        type: DataTypes.STRING,
         allowNull: false,
       },
     },

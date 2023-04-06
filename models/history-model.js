@@ -14,31 +14,31 @@ module.exports = function (sequelize, DataTypes) {
         allowNull: true,
       },
       symbol: {
-        type: DataTypes.TEXT,
+        type: DataTypes.STRING,
         allowNull: true,
       },
       type: {
-        type: DataTypes.TEXT,
+        type: DataTypes.STRING,
         allowNull: true,
       },
       val: {
-        type: DataTypes.TEXT,
+        type: DataTypes.STRING,
         allowNull: true,
       },
       comment: {
-        type: DataTypes.TEXT,
+        type: DataTypes.STRING,
         allowNull: true,
       },
       create_date: {
-        type: DataTypes.TEXT,
+        type: DataTypes.STRING,
         allowNull: true,
       },
       message_id: {
-        type: DataTypes.TEXT,
+        type: DataTypes.STRING,
         allowNull: true,
       },
       first_name: {
-        type: DataTypes.TEXT,
+        type: DataTypes.STRING,
         allowNull: true,
       },
       admin_id: {
@@ -46,7 +46,7 @@ module.exports = function (sequelize, DataTypes) {
         allowNull: true,
       },
       event: {
-        type: DataTypes.TEXT,
+        type: DataTypes.STRING,
         allowNull: true,
       },
     },

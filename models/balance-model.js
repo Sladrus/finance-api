@@ -14,15 +14,15 @@ module.exports = function (sequelize, DataTypes) {
         allowNull: false,
       },
       symbol: {
-        type: DataTypes.TEXT,
+        type: DataTypes.STRING,
         allowNull: false,
       },
       balance: {
-        type: DataTypes.TEXT,
+        type: DataTypes.STRING,
         allowNull: true,
       },
       balance_reverse: {
-        type: DataTypes.TEXT,
+        type: DataTypes.STRING,
         allowNull: true,
       },
       admin_id: {

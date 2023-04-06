@@ -15,12 +15,12 @@ module.exports = function (sequelize, DataTypes) {
         defaultValue: 1,
       },
       chat_id: {
-        type: DataTypes.TEXT,
+        type: DataTypes.STRING,
         unique: true,
         allowNull: true,
       },
       title: {
-        type: DataTypes.TEXT,
+        type: DataTypes.STRING,
         allowNull: true,
       },
       admin_id: {
@@ -28,15 +28,15 @@ module.exports = function (sequelize, DataTypes) {
         allowNull: false,
       },
       update_date: {
-        type: DataTypes.TEXT,
+        type: DataTypes.STRING,
         allowNull: true,
       },
       history_hash: {
-        type: DataTypes.TEXT,
+        type: DataTypes.STRING,
         allowNull: true,
       },
       history_update: {
-        type: DataTypes.TEXT,
+        type: DataTypes.STRING,
         allowNull: true,
       },
       active: {
@@ -45,7 +45,7 @@ module.exports = function (sequelize, DataTypes) {
         defaultValue: 0,
       },
       chat_url: {
-        type: DataTypes.TEXT,
+        type: DataTypes.STRING,
         allowNull: true,
       },
     },

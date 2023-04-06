@@ -5,29 +5,24 @@ const GroupModel = sequelize.models.Groups;
 
 class TaskService {
   async create(chat_id, body) {
-    try {
-      return await sequelize.transaction(async function (transaction) {
-        const group = await GroupModel.findOne({
-          where: { chat_id },
-        });
-        if (!group) {
-          throw ApiError.BadRequest(
-            `Группы с chat_id: ${body.chat_id} не сутществует`
-          );
-        }
-        if (!group.active) {
-          throw ApiError.ForbiddenError();
-        }
-        const task = await TaskModel.create({
-          ...body,
-          group_id: group.id,
-        });
-        return task;
+    return await sequelize.transaction(async function (transaction) {
+      const group = await GroupModel.findOne({
+        where: { chat_id },
       });
-    } catch (e) {
-      console.log(e);
-      throw ApiError.BadRequest(e);
-    }
+      if (!group) {
+        throw ApiError.BadRequest(
+          `Группы с chat_id: ${body.chat_id} не сутществует`
+        );
+      }
+      if (!group.active) {
+        throw ApiError.ForbiddenError();
+      }
+      const task = await TaskModel.create({
+        ...body,
+        group_id: group.id,
+      });
+      return task;
+    });
   }
 }
 module.exports = new TaskService();

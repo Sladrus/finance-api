@@ -13,8 +13,8 @@ class ChatController {
 
   async createChat(req, res, next) {
     try {
-      const { title } = req.body;
-      const chat = await chatService.createChat(title);
+      const body = req.body;
+      const chat = await chatService.createChat(body);
       return res.json(chat);
     } catch (e) {
       next(e);
