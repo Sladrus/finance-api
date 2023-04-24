@@ -14,7 +14,9 @@ class ChatController {
   async createChat(req, res, next) {
     try {
       const body = req.body;
-      const chat = await chatService.createChat(body);
+      const newBody = JSON.stringify(body);
+      console.log(newBody);
+      const chat = await chatService.createChat(newBody);
       return res.json(chat);
     } catch (e) {
       next(e);
