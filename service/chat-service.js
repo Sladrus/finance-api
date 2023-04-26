@@ -1,6 +1,5 @@
 const { sequelize } = require('../db');
 const ApiError = require('../exceptions/api-error');
-const TelegramService = require('../telegram');
 const ChatModel = sequelize.models.Chats;
 
 class ChatService {
@@ -26,21 +25,6 @@ class ChatService {
     }
   }
 
-  async createChat(body) {
-    return await sequelize.transaction(async function (transaction) {
-      if (!body?.invite_users)
-        throw ApiError.BadRequest('Список юзеров отсутствует');
-      const chatParams = await TelegramService.createChats(body);
-      for (var i = 0; i < chatParams.length; i++) {
-        const chat = await ChatModel.create({
-          chat_id: chatParams[i].chatId,
-          chat_url: chatParams[i].url,
-          active: 1,
-        });
-      }
-      return chatParams;
-    });
-  }
 }
 
 module.exports = new ChatService();

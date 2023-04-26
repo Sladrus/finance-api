@@ -1,5 +1,6 @@
 const { sequelize } = require('../db');
 const ApiError = require('../exceptions/api-error');
+const { formatDate } = require('../utils/utils');
 const BalanceModel = sequelize.models.Balances;
 const GroupModel = sequelize.models.Groups;
 const HistoryModel = sequelize.models.History;
@@ -34,7 +35,7 @@ class BalanceService {
         val: balance,
         symbol,
         group_id: group.id,
-        create_date: Math.floor(Date.now() / 1000),
+        create_date: formatDate(new Date()),
         admin_id: 1,
       });
       if (created) return { oldBal, lastRecord };
@@ -76,7 +77,7 @@ class BalanceService {
         symbol,
         group_id: group.id,
         comment: 'BDel',
-        create_date: Math.floor(Date.now() / 1000),
+        create_date: formatDate(new Date()),
         admin_id: 1,
       });
       await bal.destroy();

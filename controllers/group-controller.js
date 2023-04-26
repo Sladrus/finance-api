@@ -5,7 +5,7 @@ class GroupController {
     try {
       const { chat_id } = req.params;
       const { title } = req.query;
-
+      console.log(title);
       const group = await groupService.findOrCreate(chat_id, title);
       return res.json(group);
     } catch (e) {
@@ -16,9 +16,7 @@ class GroupController {
   async activeGroup(req, res, next) {
     try {
       const { chat_id } = req.params;
-      const { chat_key } = req.query;
-
-      const result = await groupService.active(chat_id, chat_key);
+      const result = await groupService.active(chat_id);
       return res.json(result);
     } catch (e) {
       next(e);
@@ -35,7 +33,6 @@ class GroupController {
       next(e);
     }
   }
-
 }
 
 module.exports = new GroupController();

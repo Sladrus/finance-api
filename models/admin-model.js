@@ -1,32 +1,37 @@
 const Sequelize = require('sequelize');
 module.exports = function(sequelize, DataTypes) {
-  return sequelize.define('Chats', {
+  return sequelize.define('Admins', {
     id: {
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true,
       autoIncrement: true
     },
-    group_id: {
+    tlg_user_id: {
       type: DataTypes.INTEGER,
       allowNull: true
     },
-    chat_url: {
+    name: {
       type: DataTypes.TEXT,
       allowNull: true
     },
-    active: {
+    tlg_login: {
+      type: DataTypes.TEXT,
+      allowNull: true
+    },
+    invite_new_cash: {
       type: DataTypes.INTEGER,
       allowNull: true,
       defaultValue: 0
     },
-    chat_id: {
-      type: DataTypes.TEXT,
-      allowNull: true
+    owner: {
+      type: DataTypes.INTEGER,
+      allowNull: true,
+      defaultValue: 0
     }
   }, {
     sequelize,
-    tableName: 'chats',
+    tableName: 'admins',
     timestamps: false,
     indexes: [
       {

@@ -2,8 +2,10 @@ const { sequelize } = require('../db');
 const ApiError = require('../exceptions/api-error');
 const GroupModel = sequelize.models.Groups;
 const UserModel = sequelize.models.Users;
+const ChatModel = sequelize.models.Chats;
 
 const { v4: uuidv4 } = require('uuid');
+const { formatDate } = require('../utils/utils');
 
 class GroupService {
   async findOrCreate(chat_id, title) {
@@ -15,10 +17,17 @@ class GroupService {
             status: 1,
             admin_id: 1,
             title,
-            update_date: Math.floor(Date.now() / 1000),
+            update_date: formatDate(new Date()),
           },
         });
-        console.log(group);
+        if (!created) {
+          console.log(title);
+          const res = await GroupModel.update(
+            { title },
+            { where: { chat_id } }
+          );
+          console.log(res);
+        }
         return group;
       });
     } catch (e) {
@@ -39,15 +48,14 @@ class GroupService {
     }
   }
 
-  async active(chat_id, chat_key) {
+  async active(chat_id) {
     try {
       return await sequelize.transaction(async function (transaction) {
-        const user = await UserModel.findOne({ where: { chat_key } });
-        if (!user) {
-          return { result: false };
-        }
         const res = await GroupModel.update(
-          { active: 1 },
+          {
+            active: 1,
+            date_activated: formatDate(new Date()),
+          },
           { where: { chat_id } }
         );
         return { result: true };

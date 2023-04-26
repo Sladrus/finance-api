@@ -10,18 +10,6 @@ class ChatController {
       next(e);
     }
   }
-
-  async createChat(req, res, next) {
-    try {
-      const body = req.body;
-      const newBody = JSON.stringify(body);
-      console.log(newBody);
-      const chat = await chatService.createChat(newBody);
-      return res.json(chat);
-    } catch (e) {
-      next(e);
-    }
-  }
 }
 
 module.exports = new ChatController();
