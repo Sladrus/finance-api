@@ -19,7 +19,7 @@ class BalanceService {
       if (!group.active) {
         throw ApiError.ForbiddenError();
       }
-
+      // const res = await GroupModel.update({body}, { where: { chat_id } });
       const [oldBal, created] = await BalanceModel.findOrCreate({
         where: { symbol, group_id: group.id },
         defaults: {

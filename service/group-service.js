@@ -21,12 +21,10 @@ class GroupService {
           },
         });
         if (!created) {
-          console.log(title);
           const res = await GroupModel.update(
             { title },
             { where: { chat_id } }
           );
-          console.log(res);
         }
         return group;
       });

@@ -6,7 +6,6 @@ class ChatService {
   async getEmptyChat() {
     try {
       return await sequelize.transaction(async function (transaction) {
-        await ChatModel.update({ active: 0 }, { where: { active: 1 } });
         const chat = await ChatModel.findOne({
           where: { active: 0, group_id: null },
         });
@@ -24,7 +23,6 @@ class ChatService {
       throw ApiError.BadRequest();
     }
   }
-
 }
 
 module.exports = new ChatService();

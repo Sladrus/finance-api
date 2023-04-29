@@ -5,7 +5,6 @@ class GroupController {
     try {
       const { chat_id } = req.params;
       const { title } = req.query;
-      console.log(title);
       const group = await groupService.findOrCreate(chat_id, title);
       return res.json(group);
     } catch (e) {
