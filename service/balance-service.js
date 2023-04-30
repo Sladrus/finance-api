@@ -19,6 +19,10 @@ class BalanceService {
       if (!group.active) {
         throw ApiError.ForbiddenError();
       }
+      await GroupModel.update(
+        { update_date: formatDate(new Date()) },
+        { where: { chat_id } }
+      );
       // const res = await GroupModel.update({body}, { where: { chat_id } });
       const [oldBal, created] = await BalanceModel.findOrCreate({
         where: { symbol, group_id: group.id },

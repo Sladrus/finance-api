@@ -18,6 +18,7 @@ class GroupService {
             admin_id: 1,
             title,
             update_date: formatDate(new Date()),
+            create_date: formatDate(new Date()),
           },
         });
         if (!created) {
