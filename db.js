@@ -10,6 +10,12 @@ const sequelize = new Sequelize(
   process.env.DB_USER,
   process.env.DB_PASSWORD,
   {
+    dialectOptions: {
+      ssl: {
+        require: true,
+        rejectUnauthorized: false, // Additional options
+      },
+    },
     host: process.env.DB_URL,
     dialect: 'mysql',
   }
