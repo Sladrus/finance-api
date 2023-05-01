@@ -76,7 +76,7 @@ class BalanceService {
 
       const history = await HistoryModel.create({
         ...body,
-        type: Number(bal.balance) > 0 ? 'out' : 'in',
+        type: Number(bal.balance) > 0 ? 'in' : 'out',
         val: bal.balance,
         symbol,
         group_id: group.id,
