@@ -35,7 +35,7 @@ class BalanceService {
 
       const lastRecord = await HistoryModel.create({
         ...body,
-        type: Number(balance) > 0 ? 'in' : 'out',
+        type: Number(balance) > 0 ? 'out' : 'in',
         val: balance,
         symbol,
         group_id: group.id,
