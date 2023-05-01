@@ -32,16 +32,25 @@ class BalanceService {
           admin_id: 1,
         },
       });
-
+      const { event } = body;
+      const type =
+        event === 'sp'
+          ? Number(balance) > 0
+            ? 'out'
+            : 'in'
+          : Number(balance) > 0
+          ? 'in'
+          : 'out';
       const lastRecord = await HistoryModel.create({
         ...body,
-        type: Number(balance) > 0 ? 'out' : 'in',
+        type: type,
         val: balance,
         symbol,
         group_id: group.id,
         create_date: formatDate(new Date()),
         admin_id: 1,
       });
+      console.log(lastRecord)
       if (created) return { oldBal, lastRecord };
 
       oldBal.balance;
@@ -84,6 +93,7 @@ class BalanceService {
         create_date: formatDate(new Date()),
         admin_id: 1,
       });
+      console.log(history);
       await bal.destroy();
       return { bal, history };
     });
