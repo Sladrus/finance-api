@@ -33,14 +33,8 @@ class BalanceService {
         },
       });
       const { event } = body;
-      const type =
-        event === 'sp'
-          ? Number(balance) > 0
-            ? 'out'
-            : 'in'
-          : Number(balance) > 0
-          ? 'in'
-          : 'out';
+      const type = Number(balance) > 0 ? 'out' : 'in';
+
       const lastRecord = await HistoryModel.create({
         ...body,
         type: type,
@@ -50,7 +44,7 @@ class BalanceService {
         create_date: formatDate(new Date()),
         admin_id: 1,
       });
-      console.log(lastRecord)
+      console.log(lastRecord);
       if (created) return { oldBal, lastRecord };
 
       oldBal.balance;
@@ -82,11 +76,15 @@ class BalanceService {
           `Баланс с валютой <b>${symbol}</b> не существует`
         );
       }
+      const type = Number(bal.balance_reverse) < 0 ? 'in' : 'out';
 
       const history = await HistoryModel.create({
         ...body,
-        type: Number(bal.balance) > 0 ? 'in' : 'out',
-        val: bal.balance,
+        type: type,
+        val:
+          type === 'in'
+            ? Number(bal.balance_reverse) * -1
+            : Number(bal.balance_reverse),
         symbol,
         group_id: group.id,
         comment: 'BDel',
