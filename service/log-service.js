@@ -8,14 +8,14 @@ class LogService {
   async create(chat_id, body) {
     try {
       return await sequelize.transaction(async function (transaction) {
-        // const group = await GroupModel.findOne({
-        //   where: { chat_id },
-        // });
-        // if (!group) {
-        //   throw ApiError.BadRequest(
-        //     `Группы с chat_id: ${body.chat_id} не существует`
-        //   );
-        // }
+        const group = await GroupModel.findOne({
+          where: { chat_id },
+        });
+        if (!group) {
+          throw ApiError.BadRequest(
+            `Группы с chat_id: ${body.chat_id} не существует`
+          );
+        }
         const log = await LogModel.create({
           ...body,
           group_id: group.id,
