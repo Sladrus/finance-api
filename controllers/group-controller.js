@@ -1,6 +1,16 @@
 const groupService = require('../service/group-service');
 
 class GroupController {
+  async findGroup(req, res, next) {
+    try {
+      const { chat_id } = req.params;
+      const group = await groupService.findGroup(chat_id);
+      return res.json(group);
+    } catch (e) {
+      next(e);
+    }
+  }
+
   async findOrCreateGroup(req, res, next) {
     try {
       const { chat_id } = req.params;

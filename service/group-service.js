@@ -8,6 +8,20 @@ const { v4: uuidv4 } = require('uuid');
 const { formatDate } = require('../utils/utils');
 
 class GroupService {
+  async findGroup(chat_id) {
+    try {
+      return await sequelize.transaction(async function (transaction) {
+        const group = await GroupModel.findOne({
+          where: { chat_id },
+        });
+        return group;
+      });
+    } catch (e) {
+      console.log(e);
+      throw ApiError.BadRequest(e);
+    }
+  }
+
   async findOrCreate(chat_id, title) {
     try {
       return await sequelize.transaction(async function (transaction) {
@@ -21,12 +35,6 @@ class GroupService {
             create_date: formatDate(new Date()),
           },
         });
-        if (!created) {
-          const res = await GroupModel.update(
-            { title },
-            { where: { chat_id } }
-          );
-        }
         return group;
       });
     } catch (e) {
