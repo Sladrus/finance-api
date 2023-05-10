@@ -16,6 +16,7 @@ const sequelize = new Sequelize(
         rejectUnauthorized: false, // Additional options
       },
     },
+    
     host: process.env.DB_URL,
     dialect: 'mysql',
   }

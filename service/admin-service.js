@@ -6,7 +6,7 @@ class AdminService {
   async getAdmins() {
     try {
       return await sequelize.transaction(async function (transaction) {
-        const admins = await AdminModel.findAll();
+        const admins = await AdminModel.findAll({ transaction });
         return admins;
       });
     } catch (e) {

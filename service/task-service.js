@@ -8,6 +8,7 @@ class TaskService {
     return await sequelize.transaction(async function (transaction) {
       const group = await GroupModel.findOne({
         where: { chat_id },
+        transaction,
       });
       if (!group) {
         throw ApiError.BadRequest(
@@ -17,10 +18,13 @@ class TaskService {
       if (!group.active) {
         throw ApiError.ForbiddenError();
       }
-      const task = await TaskModel.create({
-        ...body,
-        group_id: group.id,
-      });
+      const task = await TaskModel.create(
+        {
+          ...body,
+          group_id: group.id,
+        },
+        { transaction }
+      );
       return task;
     });
   }

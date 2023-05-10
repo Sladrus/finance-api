@@ -10,6 +10,7 @@ class BalanceService {
     return await sequelize.transaction(async function (transaction) {
       const group = await GroupModel.findOne({
         where: { chat_id },
+        transaction,
       });
       if (!group) {
         throw ApiError.BadRequest(
@@ -21,7 +22,7 @@ class BalanceService {
       }
       await GroupModel.update(
         { update_date: formatDate(new Date()) },
-        { where: { chat_id } }
+        { where: { chat_id }, transaction }
       );
       // const res = await GroupModel.update({body}, { where: { chat_id } });
       const [oldBal, created] = await BalanceModel.findOrCreate({
@@ -31,19 +32,23 @@ class BalanceService {
           balance_reverse: Number(-balance),
           admin_id: 1,
         },
+        transaction,
       });
       const { event } = body;
       const type = Number(balance) > 0 ? 'out' : 'in';
 
-      const lastRecord = await HistoryModel.create({
-        ...body,
-        type: type,
-        val: balance,
-        symbol,
-        group_id: group.id,
-        create_date: formatDate(new Date()),
-        admin_id: 1,
-      });
+      const lastRecord = await HistoryModel.create(
+        {
+          ...body,
+          type: type,
+          val: balance,
+          symbol,
+          group_id: group.id,
+          create_date: formatDate(new Date()),
+          admin_id: 1,
+        },
+        { transaction }
+      );
       console.log(lastRecord);
       if (created) return { oldBal, lastRecord };
 
@@ -59,6 +64,7 @@ class BalanceService {
     return await sequelize.transaction(async function (transaction) {
       const group = await GroupModel.findOne({
         where: { chat_id },
+        transaction,
       });
       if (!group) {
         throw ApiError.BadRequest(
@@ -70,6 +76,7 @@ class BalanceService {
       }
       const bal = await BalanceModel.findOne({
         where: { symbol, group_id: group.id },
+        transaction,
       });
       if (!bal) {
         throw ApiError.BadRequest(
@@ -78,19 +85,22 @@ class BalanceService {
       }
       const type = Number(bal.balance_reverse) < 0 ? 'in' : 'out';
 
-      const history = await HistoryModel.create({
-        ...body,
-        type: type,
-        val:
-          type === 'in'
-            ? Number(bal.balance_reverse) * -1
-            : Number(bal.balance_reverse),
-        symbol,
-        group_id: group.id,
-        comment: 'BDel',
-        create_date: formatDate(new Date()),
-        admin_id: 1,
-      });
+      const history = await HistoryModel.create(
+        {
+          ...body,
+          type: type,
+          val:
+            type === 'in'
+              ? Number(bal.balance_reverse) * -1
+              : Number(bal.balance_reverse),
+          symbol,
+          group_id: group.id,
+          comment: 'BDel',
+          create_date: formatDate(new Date()),
+          admin_id: 1,
+        },
+        { transaction }
+      );
       console.log(history);
       await bal.destroy();
       return { bal, history };
@@ -101,6 +111,7 @@ class BalanceService {
     return await sequelize.transaction(async function (transaction) {
       const group = await GroupModel.findOne({
         where: { chat_id },
+        transaction,
       });
       if (!group) {
         throw ApiError.BadRequest(
@@ -112,10 +123,12 @@ class BalanceService {
       }
       const balances = await BalanceModel.findAll({
         where: { group_id: group.id },
+        transaction,
       });
       const lastRecord = await HistoryModel.findOne({
         where: { group_id: group.id },
         order: [['id', 'DESC']],
+        transaction,
       });
 
       return { balances, lastRecord };

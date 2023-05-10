@@ -10,17 +10,21 @@ class LogService {
       return await sequelize.transaction(async function (transaction) {
         const group = await GroupModel.findOne({
           where: { chat_id },
+          transaction,
         });
         if (!group) {
           throw ApiError.BadRequest(
             `Группы с chat_id: ${body.chat_id} не существует`
           );
         }
-        const log = await LogModel.create({
-          ...body,
-          group_id: group.id,
-          create_date: formatDate(new Date()),
-        });
+        const log = await LogModel.create(
+          {
+            ...body,
+            group_id: group.id,
+            create_date: formatDate(new Date()),
+          },
+          { transaction }
+        );
         return log;
       });
     } catch (e) {

@@ -13,6 +13,7 @@ class GroupService {
       return await sequelize.transaction(async function (transaction) {
         const group = await GroupModel.findOne({
           where: { chat_id },
+          transaction,
         });
         return group;
       });
@@ -34,6 +35,7 @@ class GroupService {
             update_date: formatDate(new Date()),
             create_date: formatDate(new Date()),
           },
+          transaction,
         });
         return group;
       });
@@ -46,7 +48,10 @@ class GroupService {
   async update(chat_id, body) {
     try {
       return await sequelize.transaction(async function (transaction) {
-        const res = await GroupModel.update(body, { where: { chat_id } });
+        const res = await GroupModel.update(body, {
+          where: { chat_id },
+          transaction,
+        });
         return res;
       });
     } catch (e) {
@@ -63,7 +68,7 @@ class GroupService {
             active: 1,
             date_activated: formatDate(new Date()),
           },
-          { where: { chat_id } }
+          { where: { chat_id }, transaction }
         );
         return { result: true };
       });

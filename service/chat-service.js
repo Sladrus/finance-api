@@ -7,7 +7,8 @@ class ChatService {
     try {
       return await sequelize.transaction(async function (transaction) {
         const chat = await ChatModel.findOne({
-          where: { active: 0, group_id: null },
+          where: { active: 0 },
+          transaction,
         });
         if (!chat) {
           throw ApiError.BadRequest('Свободные чаты отсутствуют');
