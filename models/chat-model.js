@@ -22,6 +22,14 @@ module.exports = function (sequelize, DataTypes) {
         type: DataTypes.TEXT,
         allowNull: true,
       },
+      issued_by: {
+        type: DataTypes.TEXT,
+        allowNull: true,
+      },
+      date_of_issue: {
+        type: DataTypes.TEXT,
+        allowNull: true,
+      },
     },
     {
       sequelize,

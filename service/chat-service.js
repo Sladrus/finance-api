@@ -1,5 +1,6 @@
 const { sequelize } = require('../db');
 const ApiError = require('../exceptions/api-error');
+const { formatDate } = require('../utils/utils');
 const ChatModel = sequelize.models.Chats;
 
 class ChatService {
@@ -14,6 +15,8 @@ class ChatService {
           throw ApiError.BadRequest('Свободные чаты отсутствуют');
         }
         chat.active = 1;
+        chat.date_of_issue = formatDate(new Date());
+        chat.issued_by = 'chat';
         await chat.save();
         const res = await chat.get();
         console.log(res);
