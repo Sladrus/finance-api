@@ -94,6 +94,7 @@ class GroupService {
         delete groupClone.dataValues?.in_chat;
         groupClone.dataValues.create_date = formatDate(new Date());
         groupClone.dataValues.admin_id = 1;
+        groupClone.dataValues.status = 1;
         const newGroup = await GroupModel.create(groupClone.dataValues, {
           transaction,
         });
