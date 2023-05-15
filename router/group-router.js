@@ -8,11 +8,8 @@ router.post(
   authMiddleware,
   groupController.findOrCreateGroup
 );
-router.get(
-  '/:chat_id',
-  authMiddleware,
-  groupController.findGroup
-);
+router.post('/restore/:chat_id', authMiddleware, groupController.restoreGroup);
+router.get('/:chat_id', authMiddleware, groupController.findGroup);
 router.post('/active/:chat_id', authMiddleware, groupController.activeGroup);
 router.put('/update/:chat_id', authMiddleware, groupController.updateGroup);
 

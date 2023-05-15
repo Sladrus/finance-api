@@ -77,6 +77,33 @@ class GroupService {
       throw ApiError.BadRequest(e);
     }
   }
+
+  async restoreGroup(chat_id) {
+    try {
+      return await sequelize.transaction(async function (transaction) {
+        const group = await GroupModel.findOne({
+          where: { chat_id },
+          transaction,
+        });
+        if (!group) {
+          throw ApiError.BadRequest('Группа не найдена.');
+        }
+        let groupClone = { ...group };
+        await group.destroy();
+        delete groupClone.dataValues.id;
+        delete groupClone.dataValues?.in_chat;
+        groupClone.dataValues.create_date = formatDate(new Date());
+        const newGroup = await GroupModel.create(groupClone.dataValues, {
+          transaction,
+        });
+        console.log(newGroup);
+        return newGroup;
+      });
+    } catch (e) {
+      console.log(e);
+      throw ApiError.BadRequest(e);
+    }
+  }
 }
 
 module.exports = new GroupService();

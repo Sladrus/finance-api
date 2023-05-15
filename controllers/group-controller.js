@@ -42,6 +42,16 @@ class GroupController {
       next(e);
     }
   }
+
+  async restoreGroup(req, res, next) {
+    try {
+      const { chat_id } = req.params;
+      const group = await groupService.restoreGroup(chat_id);
+      return res.json(group);
+    } catch (e) {
+      next(e);
+    }
+  }
 }
 
 module.exports = new GroupController();

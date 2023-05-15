@@ -11,7 +11,7 @@ class BalanceController {
       next(e);
     }
   }
-  
+
   async setBalance(req, res, next) {
     try {
       const { chat_id } = req.params;
