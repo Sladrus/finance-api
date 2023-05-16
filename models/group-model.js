@@ -71,6 +71,14 @@ module.exports = function (sequelize, DataTypes) {
         type: DataTypes.INTEGER,
         allowNull: true,
       },
+      group_status: {
+        type: DataTypes.TEXT,
+        allowNull: true,
+      },
+      members_count: {
+        type: DataTypes.INTEGER,
+        allowNull: true,
+      },
     },
     {
       sequelize,

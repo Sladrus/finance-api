@@ -52,6 +52,7 @@ class GroupController {
       next(e);
     }
   }
+
 }
 
 module.exports = new GroupController();

@@ -30,6 +30,8 @@ class GroupService {
           where: { chat_id },
           defaults: {
             status: 1,
+            group_status: 'READY',
+            members_count: 0,
             admin_id: 1,
             title,
             update_date: formatDate(new Date()),
@@ -65,6 +67,7 @@ class GroupService {
       return await sequelize.transaction(async function (transaction) {
         const res = await GroupModel.update(
           {
+            group_status: 'ACTIVE',
             active: 1,
             date_activated: formatDate(new Date()),
           },
@@ -95,6 +98,7 @@ class GroupService {
         groupClone.dataValues.create_date = formatDate(new Date());
         groupClone.dataValues.admin_id = 1;
         groupClone.dataValues.status = 1;
+        groupClone.dataValues.group_status = 'READY';
         const newGroup = await GroupModel.create(groupClone.dataValues, {
           transaction,
         });
