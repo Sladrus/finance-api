@@ -5,6 +5,7 @@ const taskRouter = require('./task-router');
 const chatRouter = require('./chat-router');
 const balanceRouter = require('./balance-router');
 const adminRouter = require('./admin-router');
+const activityRouter = require('./activity-router');
 
 const router = new Router();
 
@@ -14,5 +15,6 @@ router.use('/log', logRouter);
 router.use('/task', taskRouter);
 router.use('/chat', chatRouter);
 router.use('/balance', balanceRouter);
+router.use('/activity', activityRouter);
 
 module.exports = router;
