@@ -1,9 +1,39 @@
+const { Op } = require('sequelize');
 const { sequelize } = require('../db');
 const ApiError = require('../exceptions/api-error');
 const { formatDate } = require('../utils/utils');
 const ChatModel = sequelize.models.Chats;
 
 class ChatService {
+  async findChat(chat_id) {
+    return await sequelize.transaction(async function (transaction) {
+      const chat = await ChatModel.findOne({
+        where: { chat_id: chat_id },
+        transaction,
+      });
+      console.log(chat_id);
+      if (!chat) {
+        throw ApiError.BadRequest('Такой чат отсутствует.');
+      }
+      return chat;
+    });
+  }
+
+  async findWhereTaken() {
+    return await sequelize.transaction(async function (transaction) {
+      const chats = await ChatModel.findAll({
+        where: {
+          date_of_issue: {
+            [Op.not]: null,
+          },
+          active: 1,
+        },
+        transaction,
+      });
+      return chats;
+    });
+  }
+
   async getEmptyChat() {
     try {
       return await sequelize.transaction(async function (transaction) {
