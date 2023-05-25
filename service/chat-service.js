@@ -11,10 +11,18 @@ class ChatService {
         where: { chat_id: chat_id },
         transaction,
       });
-      console.log(chat_id);
-      if (!chat) {
-        throw ApiError.BadRequest('Такой чат отсутствует.');
-      }
+      return chat;
+    });
+  }
+
+  async createChat(body) {
+    return await sequelize.transaction(async function (transaction) {
+      const chat = await ChatModel.create(
+        {
+          ...body,
+        },
+        { transaction }
+      );
       return chat;
     });
   }
