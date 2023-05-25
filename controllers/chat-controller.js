@@ -11,6 +11,18 @@ class ChatController {
     }
   }
 
+  async findChatWhere(req, res, next) {
+    try {
+      const body = req.body;
+      console.log(body);
+
+      const chat = await chatService.findChatWhere(body);
+      return res.json(chat);
+    } catch (e) {
+      next(e);
+    }
+  }
+
   async createChat(req, res, next) {
     try {
       const body = req.body;

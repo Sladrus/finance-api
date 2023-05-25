@@ -15,6 +15,16 @@ class ChatService {
     });
   }
 
+  async findChatWhere(body) {
+    return await sequelize.transaction(async function (transaction) {
+      const chats = await ChatModel.findAll({
+        where: body,
+        transaction,
+      });
+      return chats;
+    });
+  }
+
   async createChat(body) {
     return await sequelize.transaction(async function (transaction) {
       const chat = await ChatModel.create(
