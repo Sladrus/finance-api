@@ -16,6 +16,7 @@ class OrderService {
         where: { id },
         transaction,
       });
+      console.log(order);
       return order;
     });
   }
