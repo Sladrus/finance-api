@@ -4,8 +4,43 @@ const { formatDate } = require('../utils/utils');
 const BalanceModel = sequelize.models.Balances;
 const GroupModel = sequelize.models.Groups;
 const HistoryModel = sequelize.models.History;
+const ActivesModel = sequelize.models.Actives;
 
 class BalanceService {
+  async setActives(chat_id, symbol, balance, body) {
+    return await sequelize.transaction(async function (transaction) {
+      const group = await GroupModel.findOne({
+        where: { chat_id },
+        transaction,
+      });
+      if (!group) {
+        throw ApiError.BadRequest(
+          `Группы с chat_id: ${body.chat_id} не существует`
+        );
+      }
+      if (!group.active) {
+        throw ApiError.ForbiddenError();
+      }
+      await GroupModel.update(
+        { update_date: formatDate(new Date()) },
+        { where: { chat_id }, transaction }
+      );
+
+      const lastRecord = await ActivesModel.create(
+        {
+          ...body,
+          val: balance,
+          symbol,
+          group_id: group.id,
+          create_date: formatDate(new Date()),
+        },
+        { transaction }
+      );
+      console.log(lastRecord);
+      return { lastRecord };
+    });
+  }
+
   async set(chat_id, symbol, balance, body) {
     return await sequelize.transaction(async function (transaction) {
       const group = await GroupModel.findOne({
@@ -14,7 +49,7 @@ class BalanceService {
       });
       if (!group) {
         throw ApiError.BadRequest(
-          `Группы с chat_id: ${body.chat_id} не сутществует`
+          `Группы с chat_id: ${body.chat_id} не существует`
         );
       }
       if (!group.active) {

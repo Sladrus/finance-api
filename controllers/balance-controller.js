@@ -12,6 +12,19 @@ class BalanceController {
     }
   }
 
+  async setActives(req, res, next) {
+    try {
+      const { chat_id } = req.params;
+      const { symbol, balance } = req.query;
+      const body = req.body;
+
+      const bal = await balanceService.setActives(chat_id, symbol, balance, body);
+      return res.json(bal);
+    } catch (e) {
+      next(e);
+    }
+  }
+
   async setBalance(req, res, next) {
     try {
       const { chat_id } = req.params;
