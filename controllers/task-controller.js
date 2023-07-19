@@ -12,6 +12,16 @@ class TaskController {
       next(e);
     }
   }
+
+  async createMoneysend(req, res, next) {
+    try {
+      const body = req.body;
+      const task = await taskService.createMoneysend(body);
+      return res.json(task);
+    } catch (e) {
+      next(e);
+    }
+  }
 }
 
 module.exports = new TaskController();

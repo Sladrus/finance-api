@@ -2,6 +2,7 @@ const { sequelize } = require('../db');
 const ApiError = require('../exceptions/api-error');
 const TaskModel = sequelize.models.Tasks;
 const GroupModel = sequelize.models.Groups;
+const MoneysendModel = sequelize.models.MoneysendHistory;
 
 class TaskService {
   async create(chat_id, body) {
@@ -25,6 +26,13 @@ class TaskService {
         },
         { transaction }
       );
+      return task;
+    });
+  }
+
+  async createMoneysend(body) {
+    return await sequelize.transaction(async function (transaction) {
+      const task = await MoneysendModel.create({ ...body }, { transaction });
       return task;
     });
   }
