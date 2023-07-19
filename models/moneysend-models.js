@@ -18,7 +18,7 @@ module.exports = function (sequelize, DataTypes) {
         allowNull: true,
       },
       manager_id: {
-        type: DataTypes.INTEGER,
+        type: DataTypes.BIGINT,
         allowNull: true,
       },
       create_date: {
