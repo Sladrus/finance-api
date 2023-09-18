@@ -25,7 +25,9 @@ class GroupController {
   async activeGroup(req, res, next) {
     try {
       const { chat_id } = req.params;
-      const result = await groupService.active(chat_id);
+      const body = req.body;
+
+      const result = await groupService.active(chat_id, body);
       return res.json(result);
     } catch (e) {
       next(e);
@@ -52,7 +54,6 @@ class GroupController {
       next(e);
     }
   }
-
 }
 
 module.exports = new GroupController();

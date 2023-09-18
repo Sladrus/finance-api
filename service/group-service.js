@@ -62,7 +62,7 @@ class GroupService {
     }
   }
 
-  async active(chat_id) {
+  async active(chat_id, { city }) {
     try {
       return await sequelize.transaction(async function (transaction) {
         const res = await GroupModel.update(
@@ -70,6 +70,7 @@ class GroupService {
             group_status: 'ACTIVE',
             active: 1,
             date_activated: formatDate(new Date()),
+            city: city,
           },
           { where: { chat_id }, transaction }
         );

@@ -75,6 +75,10 @@ module.exports = function (sequelize, DataTypes) {
         type: DataTypes.TEXT,
         allowNull: true,
       },
+      city: {
+        type: DataTypes.TEXT,
+        allowNull: true,
+      },
       members_count: {
         type: DataTypes.INTEGER,
         allowNull: true,
