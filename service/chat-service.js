@@ -2,8 +2,11 @@ const { Op } = require('sequelize');
 const { sequelize } = require('../db');
 const ApiError = require('../exceptions/api-error');
 const { formatDate } = require('../utils/utils');
+const { default: axios } = require('axios');
 const ChatModel = sequelize.models.Chats;
+require('dotenv').config();
 
+const TELEGRAM_API = `https://api.telegram.org/bot${process.env.BOT_TOKEN}`;
 class ChatService {
   async findChat(chat_id) {
     return await sequelize.transaction(async function (transaction) {
@@ -96,6 +99,24 @@ class ChatService {
         { transaction }
       );
       return newChat;
+    });
+  }
+
+  async updateLink(chat_id) {
+    return await sequelize.transaction(async function (transaction) {
+      try {
+        const response = await axios.post(
+          `${TELEGRAM_API}/exportChatInviteLink`,
+          {
+            chat_id,
+          }
+        );
+        console.log('Новая приватная ссылка:', response.data.result);
+        return { chat_id, new_chat_url: response.data.result };
+      } catch (error) {
+        console.error('Ошибка при обновлении приватной ссылки:', error);
+        throw ApiError.BadRequest(error);
+      }
     });
   }
 }

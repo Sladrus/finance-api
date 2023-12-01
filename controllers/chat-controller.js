@@ -62,6 +62,17 @@ class ChatController {
       next(e);
     }
   }
+
+  async updateLink(req, res, next) {
+    try {
+      const { chat_id } = req.query;
+
+      const link = await chatService.updateLink(chat_id);
+      return res.json(link);
+    } catch (e) {
+      next(e);
+    }
+  }
 }
 
 module.exports = new ChatController();

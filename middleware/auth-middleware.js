@@ -4,14 +4,11 @@ const jwt = require('jsonwebtoken');
 
 module.exports = function (req, res, next) {
   try {
-    // Получаем заголовок авторизации из запроса
-    const apiKey = req.headers['x-api-key']; // получаем значение поля 'x-api-key' из заголовка запроса
+    const apiKey = req.headers['x-api-key'];
 
     if (!apiKey || apiKey !== process.env.API_TOKEN) {
-      // проверяем соответствие переданного значения и ожидаемого ключа
-      return next(ApiError.UnauthorizedError()); // отправляем ошибку, если ключ не прошел проверку
+      return next(ApiError.UnauthorizedError());
     }
-
     next();
   } catch (e) {
     return next(ApiError.UnauthorizedError());
