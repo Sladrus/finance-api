@@ -115,7 +115,9 @@ class ChatService {
         return { chat_id, new_chat_url: response.data.result };
       } catch (error) {
         console.error('Ошибка при обновлении приватной ссылки:', error);
-        throw ApiError.BadRequest(error);
+        throw ApiError.BadRequest(error?.response?.data?.description, [
+          error?.response?.data,
+        ]);
       }
     });
   }
