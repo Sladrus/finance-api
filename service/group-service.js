@@ -34,6 +34,7 @@ class GroupService {
             members_count: 0,
             admin_id: 1,
             title,
+            ym_client_id: 0,
             update_date: formatDate(new Date()),
             create_date: formatDate(new Date()),
           },
