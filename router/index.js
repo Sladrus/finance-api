@@ -7,6 +7,7 @@ const balanceRouter = require('./balance-router');
 const adminRouter = require('./admin-router');
 const orderRouter = require('./order-router');
 const activityRouter = require('./activity-router');
+const bpersonRouter = require('./banned-person-router');
 
 const router = new Router();
 
@@ -18,5 +19,6 @@ router.use('/chat', chatRouter);
 router.use('/order', orderRouter);
 router.use('/balance', balanceRouter);
 router.use('/activity', activityRouter);
+router.use('/bperson', bpersonRouter);
 
 module.exports = router;
