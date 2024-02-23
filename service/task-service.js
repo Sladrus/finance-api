@@ -31,6 +31,7 @@ class TaskService {
   }
 
   async createMoneysend(body) {
+    console.log(body);
     return await sequelize.transaction(async function (transaction) {
       const task = await MoneysendModel.create({ ...body }, { transaction });
       return task;
