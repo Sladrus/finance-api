@@ -23,6 +23,14 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.INTEGER,
       allowNull: true
     },
+    type: {
+      type: DataTypes.TEXT,
+      allowNull: true
+    },
+    counteragent_id: {
+      type: DataTypes.INTEGER,
+      allowNull: true
+    },
     active: {
       type: DataTypes.INTEGER,
       allowNull: true,
