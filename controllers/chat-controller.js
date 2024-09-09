@@ -1,4 +1,4 @@
-const chatService = require('../service/chat-service');
+const chatService = require("../service/chat-service");
 
 class ChatController {
   async findChat(req, res, next) {
@@ -69,6 +69,17 @@ class ChatController {
 
       const link = await chatService.updateLink(chat_id);
       return res.json(link);
+    } catch (e) {
+      next(e);
+    }
+  }
+
+  async getChatUrl(req, res, next) {
+    try {
+      const { chat_id } = req.params;
+
+      const chat_url = await chatService.getChatUrl(chat_id);
+      return res.json(chat_url);
     } catch (e) {
       next(e);
     }

@@ -1,10 +1,10 @@
-const { Op } = require('sequelize');
-const { sequelize } = require('../db');
-const ApiError = require('../exceptions/api-error');
-const { formatDate } = require('../utils/utils');
-const { default: axios } = require('axios');
+const { Op } = require("sequelize");
+const { sequelize } = require("../db");
+const ApiError = require("../exceptions/api-error");
+const { formatDate } = require("../utils/utils");
+const { default: axios } = require("axios");
 const ChatModel = sequelize.models.Chats;
-require('dotenv').config();
+require("dotenv").config();
 
 const TELEGRAM_API = `https://api.telegram.org/bot${process.env.BOT_TOKEN}`;
 class ChatService {
@@ -63,11 +63,11 @@ class ChatService {
           transaction,
         });
         if (!chat) {
-          throw ApiError.BadRequest('Свободные чаты отсутствуют');
+          throw ApiError.BadRequest("Свободные чаты отсутствуют");
         }
         chat.active = 1;
         chat.date_of_issue = formatDate(new Date());
-        chat.issued_by = 'chat';
+        chat.issued_by = "chat";
         await chat.save();
         const res = await chat.get();
         console.log(res);
@@ -82,7 +82,7 @@ class ChatService {
   async restoreChat(chat_id, link) {
     return await sequelize.transaction(async function (transaction) {
       if (chat_id === undefined || link == undefined)
-        throw ApiError.BadRequest('Ошибка ввода данных');
+        throw ApiError.BadRequest("Ошибка ввода данных");
       const chat = await ChatModel.findOne({
         where: { chat_id },
         transaction,
@@ -111,10 +111,32 @@ class ChatService {
             chat_id,
           }
         );
-        console.log('Новая приватная ссылка:', response.data.result);
+        console.log("Новая приватная ссылка:", response.data.result);
         return { chat_id, new_chat_url: response.data.result };
       } catch (error) {
-        console.error('Ошибка при обновлении приватной ссылки:', error);
+        console.error("Ошибка при обновлении приватной ссылки:", error);
+        throw ApiError.BadRequest(error?.response?.data?.description, [
+          error?.response?.data,
+        ]);
+      }
+    });
+  }
+
+  async getChatUrl(chat_id) {
+    return await sequelize.transaction(async function (transaction) {
+      try {
+        const chat = await ChatModel.findOne({
+          where: { chat_id },
+          transaction,
+        });
+        if (!chat) {
+          throw ApiError.BadRequest("Такого чата не существует.");
+        }
+        if (!chat?.url) {
+          throw ApiError.BadRequest("Ссылка на чат отсутствует.");
+        }
+        return { chat_id, chat_url: chat?.chat_url };
+      } catch (error) {
         throw ApiError.BadRequest(error?.response?.data?.description, [
           error?.response?.data,
         ]);
