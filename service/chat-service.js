@@ -133,7 +133,7 @@ class ChatService {
         if (!chat) {
           throw ApiError.BadRequest("Такого чата не существует.");
         }
-        if (!chat?.url) {
+        if (!chat?.chat_url) {
           throw ApiError.BadRequest("Ссылка на чат отсутствует.");
         }
         return { chat_id, chat_url: chat?.chat_url };
