@@ -10,6 +10,6 @@ router.post("/get", authMiddleware, chatController.findChatWhere);
 router.post("/where", authMiddleware, chatController.findWhereTaken);
 router.post("/restore", authMiddleware, chatController.restoreChat);
 router.post("/update-link", authMiddleware, chatController.updateLink);
-router.post("/get-url/:chat_id", authMiddleware, chatController.getChatUrl);
+router.get("/get-url/:chat_id", authMiddleware, chatController.getChatUrl);
 
 module.exports = router;
