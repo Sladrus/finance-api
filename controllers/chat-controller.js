@@ -78,8 +78,8 @@ class ChatController {
     try {
       const { chat_id } = req.params;
 
-      const chat_url = await chatService.getChatUrl(chat_id);
-      return res.json(chat_url);
+      const data = await chatService.getChatUrl(chat_id);
+      return res.json(data);
     } catch (e) {
       next(e);
     }

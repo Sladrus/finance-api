@@ -125,6 +125,7 @@ class ChatService {
   async getChatUrl(chat_id) {
     return await sequelize.transaction(async function (transaction) {
       try {
+        console.log(chat_id);
         const chat = await ChatModel.findOne({
           where: { chat_id },
           transaction,
